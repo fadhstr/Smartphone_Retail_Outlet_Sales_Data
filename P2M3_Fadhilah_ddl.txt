@@ -1,0 +1,43 @@
+1. Url dataset yang dijadikan acuan
+https://www.kaggle.com/datasets/shubham2703/smartphone-retail-outlet-sales-data
+
+
+2.  Syntax DDL untuk pembuatan database dan table.
+# Meta-Database
+POSTGRES_USER=airflow_m3
+POSTGRES_PASSWORD=airflow_m3
+POSTGRES_DB=airflow_m3
+
+# Airflow Core
+AIRFLOW__CORE__FERNET_KEY=UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E=
+AIRFLOW__CORE__EXECUTOR=LocalExecutor
+AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=True
+AIRFLOW__CORE__LOAD_EXAMPLES=False
+AIRFLOW_UID=0
+
+# Backend DB
+AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow_m3:airflow_m3@postgres/airflow_m3
+AIRFLOW__DATABASE__LOAD_DEFAULT_CONNECTIONS=False
+
+# Airflow Init
+_AIRFLOW_DB_UPGRADE=True
+_AIRFLOW_WWW_USER_CREATE=True
+_AIRFLOW_WWW_USER_USERNAME=airflow
+_AIRFLOW_WWW_USER_PASSWORD=airflow
+
+3. Syntax DML untuk melakukan insert data ke database. Anda bisa menggunakan perintah COPY untuk melakukan insert data.
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres-m3
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow_m3"]
+      interval: 5s
+      retries: 5
+    volumes :
+      #- ./irfan_ddl.sql:/docker-entrypoint-initdb.d/init.sql #sesuai dengan file csv di file irfan_ddl.sql
+      - ./P2M3_Fadhilah_data_raw.csv:/files/P2M3_Fadhilah_data_raw.csv  #sesuai dengan file csv di file irfan_ddl.sql
+    env_file:
+      - .env

@@ -1,0 +1,34 @@
+1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+NoSQL adalah jenis basis data yang lebih fleksibel dalam menangani data yang bisa berubah-ubah tanpa memerlukan skema yang ketat 
+seperti pada basis data relasional. Ini memungkinkan NoSQL untuk menangani volume data yang besar dengan lebih efisien, 
+menjadikannya pilihan yang tepat untuk aplikasi web dengan kebutuhan skalabilitas dan ketersediaan tinggi. 
+Dalam NoSQL, data dapat disimpan dalam berbagai format seperti dokumen, grafik, atau kolom, 
+yang disesuaikan dengan kebutuhan spesifik dari aplikasi tersebut.
+
+2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+Kita harus menggunakan Relational Database Management System (RDBMS) ketika data kita memiliki struktur yang jelas dan konsisten,
+dan kita membutuhkan integritas data tinggi serta konsistensi transaksi. NoSQL cocok digunakan ketika kita memiliki data yang tidak terstruktur 
+atau semi-struktur, membutuhkan skalabilitas horizontal untuk menangani volume data yang besar, serta ketika fleksibilitas skema diperlukan untuk
+menangani perubahan struktur data yang sering.
+
+3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+Apache CouchDB memiliki fitur replikasi kuat untuk menyalin data antara server secara otomatis, model dokumen yang fleksibel 
+seperti MongoDB, serta dukungan untuk replikasi offline, memungkinkan aplikasi bekerja secara lokal. MongoDB, di sisi lain, 
+menonjol dalam skema dinamis, skalabilitas horizontal mudah, dan kinerja tinggi dengan dukungan indeks dan kueri kuat.
+
+4. Apache Airflow adalah platform open-source untuk membuat, menjadwalkan, dan memantau alur kerja data yang kompleks.
+Dengan Airflow, kita dapat mendefinisikan alur kerja dalam kode Python dan mengatur tugas-tugas serta ketergantungannya.
+Ini memberikan fleksibilitas dan kontrol penuh atas aliran kerja data kita, serta menyediakan antarmuka web untuk
+pemantauan dan manajemen yang mudah.
+
+5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+Great Expectations adalah perangkat lunak open-source yang digunakan untuk memvalidasi, memantau, dan mengelola kualitas data 
+dalam proyek analitik dan pemrosesan data. Dengan Great Expectations, pengguna dapat membuat aturan dan ekspektasi tentang struktur, 
+nilai, dan karakteristik lain dari data yang mereka gunakan. Kemudian, Great Expectations akan memvalidasi data sesuai dengan 
+ekspektasi ini, memberikan laporan yang jelas tentang kepatuhan data terhadap aturan yang telah ditetapkan.
+
+6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+Batch processing adalah metode pengolahan data di mana sejumlah besar data diproses secara bersamaan dalam batch,
+biasanya pada interval waktu tertentu. Contohnya termasuk pemrosesan transaksi perbankan, analisis data historis, 
+dan pembuatan laporan keuangan. Tools yang umum digunakan untuk batch processing meliputi Apache Hadoop, Apache Spark, dan Apache Flink.
+Ini adalah pendekatan yang efisien untuk memproses data dalam volume besar di mana waktu respons instan tidak diperlukan.
